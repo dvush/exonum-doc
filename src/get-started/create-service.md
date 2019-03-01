@@ -678,19 +678,20 @@ let peer_address = "0.0.0.0:2000".parse().unwrap();
 
 // Return this value from `node_config` function
 NodeConfig {
-    listen_address: peer_address,
-    peers: vec![],
+    listen_address: peer_address.parse().unwrap(),
     service_public_key,
     service_secret_key,
     consensus_public_key,
     consensus_secret_key,
     genesis,
-    external_address: None,
+    external_address: peer_address.to_owned(),
     network: Default::default(),
-    whitelist: Default::default(),
+    connect_list: Default::default(),
     api: api_cfg,
     mempool: Default::default(),
     services_configs: Default::default(),
+    database: Default::default(),
+    thread_pool_size: Default::default(),
 }
 ```
 
