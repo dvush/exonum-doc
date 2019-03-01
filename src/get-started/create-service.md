@@ -33,7 +33,7 @@ Add necessary dependencies to `Cargo.toml` in the project directory:
 
 ```toml
 [package]
-name = "exonum_cryptocurrency"
+name = "cryptocurrency"
 version = "0.0.0"
 edition = "2018"
 authors = ["Your Name <your@email.com>"]
@@ -127,7 +127,7 @@ pub use self::cryptocurrency::Wallet;
 
 include!(concat!(env!("OUT_DIR"), "/protobuf_mod.rs"));
 
-use exonum::proto::schema::*;rust
+use exonum::proto::schema::*;
 ```
 
 3) Add rust code generate to your `build.rs`. You should have `protoc` installed.
